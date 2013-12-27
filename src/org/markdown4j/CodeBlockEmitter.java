@@ -2,7 +2,7 @@ package org.markdown4j;
 
 import java.util.List;
 
-import usingmarkdown4j.BlockEmitter;
+import com.github.rjeschke.txtmark.BlockEmitter;
 
 public class CodeBlockEmitter implements BlockEmitter {
 

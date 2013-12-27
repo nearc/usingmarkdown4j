@@ -1,3 +1,5 @@
 *.pages
 *.pdf
 *.zip
+*.jar
+/bin

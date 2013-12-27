@@ -5,9 +5,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
 
-import usingmarkdown4j.Configuration;
-import usingmarkdown4j.Configuration.Builder;
-import usingmarkdown4j.Processor;
+import com.github.rjeschke.txtmark.Configuration;
+import com.github.rjeschke.txtmark.Configuration.Builder;
+import com.github.rjeschke.txtmark.Processor;
 
 public class Markdown4jProcessor {
 	

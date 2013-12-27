@@ -3,7 +3,7 @@ package org.markdown4j;
 import java.util.Iterator;
 import java.util.Map;
 
-import usingmarkdown4j.DefaultDecorator;
+import com.github.rjeschke.txtmark.DefaultDecorator;
 
 public class ExtDecorator extends DefaultDecorator {
 	

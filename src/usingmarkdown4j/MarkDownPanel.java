@@ -3,6 +3,7 @@ package usingmarkdown4j;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.IOException;
 
 import javax.swing.JEditorPane;
 import javax.swing.JFrame;
@@ -20,6 +21,9 @@ import javax.swing.text.Style;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
 import javax.swing.text.StyledDocument;
+
+import org.markdown4j.Markdown4jProcessor;
+
 
 public class MarkDownPanel extends JPanel 
 			implements DocumentListener{
@@ -72,7 +76,11 @@ public class MarkDownPanel extends JPanel
 		try {
 			textUpdate(de);
 		} catch (BadLocationException be) {
+			System.out.println("Bad Location");
 			be.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
@@ -82,13 +90,16 @@ public class MarkDownPanel extends JPanel
 			textUpdate(de);
 		} catch (BadLocationException be) {
 			be.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 	
-	private void textUpdate(DocumentEvent de) throws BadLocationException{
+	private void textUpdate(DocumentEvent de) throws BadLocationException, IOException{
 		Document doc = de.getDocument();
 		String text = doc.getText(0, doc.getLength());
-		String html = Processor.process(text);
+		String html = new Markdown4jProcessor().process(text);
 
 		rightPane.setText(html);
 
